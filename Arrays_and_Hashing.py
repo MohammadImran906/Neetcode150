@@ -10,13 +10,13 @@
 # arr=[int(x) for x in input().split()]
 # print(contains_duplicate_1(arr))
 
-def contains_duplicate_2(arr):   #TC-> O(n)
-    array=set()
-    for i in arr:
-        if i in array:
-            return True
-        array.add(i)
-    return False
+# def contains_duplicate_2(arr):   #TC-> O(n)
+#     array=set()
+#     for i in arr:
+#         if i in array:
+#             return True
+#         array.add(i)
+#     return False
 
-arr=[int(x) for x in input().split()]
-print(contains_duplicate_2(arr))
+# arr=[int(x) for x in input().split()]
+# print(contains_duplicate_2(arr))
