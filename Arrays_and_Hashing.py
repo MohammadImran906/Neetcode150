@@ -96,3 +96,21 @@
 # arr=[int(x) for x in input().split()]
 # x=int(input())
 # print(two_sum_2(arr,x))
+
+
+# Group Anagram
+def group_anagrams(arr):
+    anagram_map = {}
+    
+    for word in arr:
+        sorted_word = "".join(sorted(word))
+        
+        if sorted_word not in anagram_map:
+            anagram_map[sorted_word] = []
+            
+        anagram_map[sorted_word].append(word)
+        
+    return list(anagram_map.values())
+
+arr = [x for x in input().split()]
+print(group_anagrams(arr))
