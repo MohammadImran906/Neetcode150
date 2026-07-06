@@ -51,19 +51,19 @@
 
 #Another Approach
 #TC-> O(n²) SC->O(N)
-def valid_anagram_3(w1,w2):
-    if len(w1) != len(w2):
-        return False 
+# def valid_anagram_3(w1,w2):
+#     if len(w1) != len(w2):
+#         return False 
     
-    word_list_2=list(w2)
+#     word_list_2=list(w2)
 
-    for i in w1:
-        if i in word_list_2:
-            word_list_2.remove(i)
-        else:
-            return False
-    return True
+#     for i in w1:
+#         if i in word_list_2:
+#             word_list_2.remove(i)
+#         else:
+#             return False
+#     return True
 
-w1=input()
-w2=input()
-print(valid_anagram_3(w1,w2))
+# w1=input()
+# w2=input()
+# print(valid_anagram_3(w1,w2))
