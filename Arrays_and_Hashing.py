@@ -69,16 +69,30 @@
 # print(valid_anagram_3(w1,w2))
 
 
-
 #Q-3. Two sum
-def two_sum(arr, x):
-    n=len(arr)
-    for i in range(n):
-        for j in range(i+1,n):
-            if arr[i]+arr[j]==x:
-                indexes= i,j
-    return indexes     
+# Brueforce approach. TC- O(n²) SC- O(1)
+# def two_sum_1(arr, x):
+#     n=len(arr)
+#     for i in range(n):
+#         for j in range(i+1,n):
+#             if arr[i]+arr[j]==x:
+#                 indexes= i,j
+#     return indexes     
 
-arr=[int(x) for x in input().split()]
-x=int(input())
-print(two_sum(arr,x))
+# arr=[int(x) for x in input().split()]
+# x=int(input())
+# print(two_sum_1(arr,x))
+
+#Optimal approach TC-> O(n) SC->O(1)
+# def two_sum_2(arr, x):
+#     n=len(arr)
+#     start=0
+#     for i in range(1,n):
+#         if arr[start]+arr[i]==x:
+#             index= start,i
+#         start=start+1
+#     return index
+
+# arr=[int(x) for x in input().split()]
+# x=int(input())
+# print(two_sum_2(arr,x))
