@@ -1,4 +1,4 @@
-# Contains Duplicate
+# Q-1. Contains Duplicate
 # def contains_duplicate_1(arr):  #TC-> O(n²)
 #     n=len(arr)
 #     for i in range(n):
@@ -23,7 +23,7 @@
 
 
 
-# Valid Anagram
+#Q-2. Valid Anagram
 # Btter approach. TC-> O(logn) SC->O(n)
 # def valid_anagram_1(w1,w2):
 #     if(len(w1) != len(w2)):
@@ -67,3 +67,18 @@
 # w1=input()
 # w2=input()
 # print(valid_anagram_3(w1,w2))
+
+
+
+#Q-3. Two sum
+def two_sum(arr, x):
+    n=len(arr)
+    for i in range(n):
+        for j in range(i+1,n):
+            if arr[i]+arr[j]==x:
+                indexes= i,j
+    return indexes     
+
+arr=[int(x) for x in input().split()]
+x=int(input())
+print(two_sum(arr,x))
