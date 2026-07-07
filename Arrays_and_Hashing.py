@@ -131,21 +131,53 @@
 
 
 # optimal solution. TC->O(n)  SC->O(n)
-from collections import Counter
-def top_k_most_frequent(arr,k):
-    count=Counter(arr)
-    buckets=[[] for _ in range(len(arr) + 1 )]
+# from collections import Counter
+# def top_k_most_frequent(arr,k):
+#     count=Counter(arr)
+#     buckets=[[] for _ in range(len(arr) + 1 )]
     
-    for num,freq in count.items():
-        buckets[freq].append(num)
+#     for num,freq in count.items():
+#         buckets[freq].append(num)
     
-    result=[]
-    for i in range(len(buckets)-1,0,-1):
-        for num in buckets[i]:
-            result.append(num)
-            if len(result)==k:
-                return result
+#     result=[]
+#     for i in range(len(buckets)-1,0,-1):
+#         for num in buckets[i]:
+#             result.append(num)
+#             if len(result)==k:
+#                 return result
 
-arr=[int(x) for x in input().split()]
-k=int(input())
-print(top_k_most_frequent(arr,k))
+# arr=[int(x) for x in input().split()]
+# k=int(input())
+# print(top_k_most_frequent(arr,k))
+
+
+#Q-6. Encode and Decode String
+# TC-> O(n) SC-> O(1)
+def encode(string):
+    result=''
+    for s in string:
+        result += str(len(s)) + '#' + s 
+    return result
+
+def decode(s):
+    res=[]
+    i=0
+    while i< len(s):
+        j=i
+        while s[j] != "#":
+            j+=1
+
+        length=int(s[i:j])
+
+        word=s[j+1 : j + 1 + length]
+        res.append(word)
+
+        i= j+ 1 + length
+
+    return res
+
+string_list= [x for x in input().split()]
+s=encode(string_list)
+print(s)
+y=decode(s)
+print(y)
