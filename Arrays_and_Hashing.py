@@ -98,19 +98,33 @@
 # print(two_sum_2(arr,x))
 
 
-# Group Anagram
-def group_anagrams(arr):
-    anagram_map = {}
+#Q-4. Group Anagram
+#TC-> O(n.klogk)  SC-> (n.k)
+# def group_anagrams(arr):
+#     anagram_map = {}
     
-    for word in arr:
-        sorted_word = "".join(sorted(word))
+#     for word in arr:
+#         sorted_word = "".join(sorted(word))
         
-        if sorted_word not in anagram_map:
-            anagram_map[sorted_word] = []
+#         if sorted_word not in anagram_map:
+#             anagram_map[sorted_word] = []
             
-        anagram_map[sorted_word].append(word)
+#         anagram_map[sorted_word].append(word)
         
-    return list(anagram_map.values())
+#     return list(anagram_map.values())
 
-arr = [x for x in input().split()]
-print(group_anagrams(arr))
+# arr = [x for x in input().split()]
+# print(group_anagrams(arr))
+
+
+# Q-5. Top K Frequent Elements
+# TC-> O(nlogK)  SC-> O(n)
+from collections import Counter
+def top_k_most_frequent(arr,k):
+    frequency=Counter(arr)
+    sorted_frequency=(frequency.most_common(k))
+    return [item[0] for item in sorted_frequency]
+
+arr=[int(x) for x in input().split()]
+k=int(input())
+print(top_k_most_frequent(arr,k))
