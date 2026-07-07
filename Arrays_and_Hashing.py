@@ -119,12 +119,12 @@
 
 # Q-5. Top K Frequent Elements
 # TC-> O(nlogK)  SC-> O(n)
-from collections import Counter
-def top_k_most_frequent(arr,k):
-    frequency=Counter(arr)
-    sorted_frequency=(frequency.most_common(k))
-    return [item[0] for item in sorted_frequency]
+# from collections import Counter
+# def top_k_most_frequent(arr,k):
+#     frequency=Counter(arr)
+#     sorted_frequency=(frequency.most_common(k))
+#     return [item[0] for item in sorted_frequency]
 
-arr=[int(x) for x in input().split()]
-k=int(input())
-print(top_k_most_frequent(arr,k))
+# arr=[int(x) for x in input().split()]
+# k=int(input())
+# print(top_k_most_frequent(arr,k))
