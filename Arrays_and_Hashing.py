@@ -153,31 +153,65 @@
 
 #Q-6. Encode and Decode String
 # TC-> O(n) SC-> O(1)
-def encode(string):
-    result=''
-    for s in string:
-        result += str(len(s)) + '#' + s 
+# def encode(string):
+#     result=''
+#     for s in string:
+#         result += str(len(s)) + '#' + s 
+#     return result
+
+# def decode(s):
+#     res=[]
+#     i=0
+#     while i< len(s):
+#         j=i
+#         while s[j] != "#":
+#             j+=1
+
+#         length=int(s[i:j])
+
+#         word=s[j+1 : j + 1 + length]
+#         res.append(word)
+
+#         i= j+ 1 + length
+
+#     return res
+
+# string_list= [x for x in input().split()]
+# s=encode(string_list)
+# print(s)
+# print(decode(s))
+
+
+
+# Q-7. Product of Array except self
+# Brute Force approach. TC-> O(n²)  SC->O(n)
+# def product_1(arr):
+#     result=[]
+#     n=len(arr)
+#     for i in range(n):
+#         prod=1
+#         for j in range(n):
+#             prod*=arr[j]
+#         result.append(prod//arr[i])
+#     return result
+
+# arr=[int(x) for x in input().split()]
+# print(product_1(arr))
+
+#Optimal Solution
+# TC-> O(n) SC->O(1)
+def product_2(arr):
+    n=len(arr)
+    result= [1]*n
+    left_prod=1
+    for i in range(n):
+        result[i]=left_prod
+        left_prod *= arr[i]
+    right_prod=1
+    for i in range(n-1,-1,-1):
+        result[i] *= right_prod
+        right_prod *= arr[i]
     return result
 
-def decode(s):
-    res=[]
-    i=0
-    while i< len(s):
-        j=i
-        while s[j] != "#":
-            j+=1
-
-        length=int(s[i:j])
-
-        word=s[j+1 : j + 1 + length]
-        res.append(word)
-
-        i= j+ 1 + length
-
-    return res
-
-string_list= [x for x in input().split()]
-s=encode(string_list)
-print(s)
-y=decode(s)
-print(y)
+arr=[int(x) for x in input().split()]
+print(product_2(arr))
