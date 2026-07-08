@@ -200,18 +200,18 @@
 
 #Optimal Solution
 # TC-> O(n) SC->O(1)
-def product_2(arr):
-    n=len(arr)
-    result= [1]*n
-    left_prod=1
-    for i in range(n):
-        result[i]=left_prod
-        left_prod *= arr[i]
-    right_prod=1
-    for i in range(n-1,-1,-1):
-        result[i] *= right_prod
-        right_prod *= arr[i]
-    return result
+# def product_2(arr):
+#     n=len(arr)
+#     result= [1]*n
+#     left_prod=1
+#     for i in range(n):
+#         result[i]=left_prod
+#         left_prod *= arr[i]
+#     right_prod=1
+#     for i in range(n-1,-1,-1):
+#         result[i] *= right_prod
+#         right_prod *= arr[i]
+#     return result
 
-arr=[int(x) for x in input().split()]
-print(product_2(arr))
+# arr=[int(x) for x in input().split()]
+# print(product_2(arr))
