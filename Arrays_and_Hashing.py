@@ -220,14 +220,17 @@
 # Q-8. Valid Sudoku
 #For N*N sudoku- TC-> O(n²) SC->O(n)
 #For 9*9 sudoku- TC-> O(1) SC->O(1)
+#Optimal solution for 9*9 Sudoku
 # def isValidSudoku(board):
 #     rows= [0]* 9
 #     column= [0]* 9
 #     squares= [0]* 9
+
 #     for r in range(9):
 #         for c in range(9):
 #             if board[r][c]==".":
 #                 continue
+
 #             val=int(board[r][c])-1
     
 #             if (1<<val) & rows[r]:
