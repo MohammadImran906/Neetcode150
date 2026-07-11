@@ -254,3 +254,22 @@
 #     print("Invalid")
 
 
+#Q-9. Longest Consecutive Sequence
+def longest_consecutive(arr):
+    num_set=set(arr)
+    longest_streak=0
+
+    for i in num_set:
+        if i - 1  not in num_set:
+            current_num=i
+            current_streak=1
+
+        while (current_num+1) in num_set:
+            current_num +=1
+            current_streak+=1
+        longest_streak= max(longest_streak, current_streak)
+    
+    return longest_streak
+
+arr= [int(x) for x in input().split()]
+print(longest_consecutive(arr))
