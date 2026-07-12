@@ -76,3 +76,26 @@
 
 # arr=[int(x) for x in input().split()]
 # print(three_sum(arr))
+
+
+
+#Q-4. Container With Most Water
+#TC-> O(n) SC-> O(1)
+def container_with_most_water(arr):
+    n=len(arr)
+    result=0
+    start=0
+    end=n-1
+    while start<end:
+        width=end-start
+        water_content= min(arr[start],arr[end]) * width
+        result= max(water_content,result)
+
+        if arr[start]<arr[end]:
+            start+=1
+        else:
+            end-=1
+    return result
+
+arr=[int(x) for x in input().split()]
+print(container_with_most_water(arr))
