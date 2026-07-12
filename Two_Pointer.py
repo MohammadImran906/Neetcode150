@@ -45,34 +45,34 @@
 
 #Q-3. 3 Sum
 # TC-> O(n²), Aux.SC->O(1), Internal SC->O(n)
-def three_sum(arr):
-    arr.sort()
-    n=len(arr)
-    result=[]
-    for i in range(n):
+# def three_sum(arr):
+#     arr.sort()
+#     n=len(arr)
+#     result=[]
+#     for i in range(n):
 
-        if i > 0 and arr[i] == arr[i - 1]:
-            continue
+#         if i > 0 and arr[i] == arr[i - 1]:
+#             continue
 
-        start=i+1
-        end=n-1
+#         start=i+1
+#         end=n-1
 
-        while start<end:
-            current_sum=arr[i] + arr[start]+ arr[end]
-            if current_sum==0:
-                result.append([arr[i],arr[start],arr[end]])
-                start+=1
-                end-=1
+#         while start<end:
+#             current_sum=arr[i] + arr[start]+ arr[end]
+#             if current_sum==0:
+#                 result.append([arr[i],arr[start],arr[end]])
+#                 start+=1
+#                 end-=1
 
-                while start<end and arr[start]==arr[start-1]:
-                    start+=1
-                while start<end and arr[end]==arr[end+1]:
-                    end-=1
-            elif current_sum<0:
-                start+=1
-            else:
-                end-=1
-    return result
+#                 while start<end and arr[start]==arr[start-1]:
+#                     start+=1
+#                 while start<end and arr[end]==arr[end+1]:
+#                     end-=1
+#             elif current_sum<0:
+#                 start+=1
+#             else:
+#                 end-=1
+#     return result
 
-arr=[int(x) for x in input().split()]
-print(three_sum(arr))
+# arr=[int(x) for x in input().split()]
+# print(three_sum(arr))
