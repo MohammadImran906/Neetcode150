@@ -99,3 +99,34 @@
 
 # arr=[int(x) for x in input().split()]
 # print(container_with_most_water(arr))
+
+
+
+#Q-5. Trapping Rain Water
+#TC-> O(n) SC->O(1)
+def trapping_rain_water(arr):
+    n=len(arr)
+    total_water=0
+    start=0
+    end=n-1
+    left_max=arr[start]
+    right_max=arr[end]
+    if not arr or n<3:
+        return 0
+    while start<end:
+        if left_max<right_max:
+            start=start+1
+            if arr[start]<left_max:
+                total_water += left_max-arr[start]
+            else:
+                left_max=arr[start]
+        else:
+            end-=1
+            if arr[end]<right_max:
+                total_water+=right_max-arr[end]
+            else:
+                right_max=arr[end]
+    return total_water
+
+arr=[int(x) for x in input().split()]
+print(trapping_rain_water(arr))
