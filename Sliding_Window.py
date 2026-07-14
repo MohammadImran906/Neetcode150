@@ -23,7 +23,7 @@
 
 
 #Longest Substring Without Repeating Characters
-# Two pointer.TC->O(n²) Sc->O(n)
+# Sliding window approach.TC->O(n²) Sc->O(n)
 # def length_of_longest_substring(string):
 #     start=0
 #     next=0
