@@ -21,21 +21,23 @@
 # print(Buy_Sell(prices))
 
 
-#Longest Substring Without Repeating Characters
-def length_of_longest_substring(string):
-    start=0
-    next=0
-    new_word=""
-    max_length=0
-    while next<len(string):
-        if string[next] not in new_word:
-            new_word+=string[next]
-            next+=1
-            max_length=max(max_length,len(new_word))
-        else:
-            start=+1
-            new_word=new_word[start:next]
-    return max_length
 
-string=input()
-print(length_of_longest_substring(string))
+#Longest Substring Without Repeating Characters
+#TC->O(n²) Sc->O(n)
+# def length_of_longest_substring(string):
+#     start=0
+#     next=0
+#     new_word=""
+#     max_length=0
+#     while next<len(string):
+#         if string[next] not in new_word:
+#             new_word+=string[next]
+#             next+=1
+#             max_length=max(max_length,len(new_word))
+#         else:
+#             start=+1
+#             new_word=new_word[start:next]
+#     return max_length
+
+# string=input()
+# print(length_of_longest_substring(string))
