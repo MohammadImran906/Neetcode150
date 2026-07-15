@@ -44,20 +44,21 @@
 
 
 #Optimal approach
-def length_of_longest_substring(string):
-    empty_dict={}
-    left=0
-    result=0
+# TC-> O(n)  SC-> O(m)
+# def length_of_longest_substring(string):
+#     empty_dict={}
+#     left=0
+#     result=0
 
-    for i in range(len(string)):
-        if string[i] in empty_dict:
-            left=max(empty_dict[string[i]] + 1, left)
+#     for i in range(len(string)):
+#         if string[i] in empty_dict:
+#             left=max(empty_dict[string[i]] + 1, left)
 
-        empty_dict[string[i]]=i
-        result=max(result, i-left+1)
+#         empty_dict[string[i]]=i
+#         result=max(result, i-left+1)
 
-    return result
+#     return result
 
 
-string=input()
-print(length_of_longest_substring(string))
+# string=input()
+# print(length_of_longest_substring(string))
