@@ -67,24 +67,24 @@
 
 #Longest Repeating Character Replacement
 #TC-> O(n)  SC-> O(1)
-def characterReplacement(word,):
-    count = {}
-    res = 0
-    l = 0
-    max_freq = 0
+# def characterReplacement(word,):
+#     count = {}
+#     res = 0
+#     l = 0
+#     max_freq = 0
 
-    for r in range(len(word)):
-        count[word[r]] = 1 + count.get(word[r], 0)
-        max_freq = max(max_freq, count[word[r]])
+#     for r in range(len(word)):
+#         count[word[r]] = 1 + count.get(word[r], 0)
+#         max_freq = max(max_freq, count[word[r]])
 
-        while (r - l + 1) - max_freq > k:
-            count[word[l]] -= 1
-            l += 1
+#         while (r - l + 1) - max_freq > k:
+#             count[word[l]] -= 1
+#             l += 1
 
-        res = max(res, r - l + 1)
+#         res = max(res, r - l + 1)
 
-    return res
+#     return res
 
-word= input()
-k=int(input())
-print(characterReplacement(word,k))
+# word= input()
+# k=int(input())
+# print(characterReplacement(word,k))
