@@ -119,3 +119,52 @@
 # string1=input()
 # string2=input()
 # print(check_permutation(string1,string2))
+
+
+
+#Q-5. Minimum Window Substring
+def Minimum_Window_Substring(s,t):
+    if len(s)<len(t):
+        return""
+        
+    t_count={}
+    for char in t:
+        t_count[char]=t_count.get(char,0)+1
+        
+    required=len(t_count)
+    match=0
+    count_window={}
+    left=0
+    min_len=float('inf')
+    start_idx=0
+    
+    for right in range(len(s)):
+        char_in=s[right]
+        if char_in in t_count:
+            count_window[char_in]=count_window.get(char_in,0)+1
+            if count_window[char_in]==t_count[char_in]:
+                match+=1
+                
+        while(required==match):
+            current_len=right-left+1
+            if current_len<min_len:
+                min_len=current_len
+                start_idx=left
+                
+            char_out=s[left]
+            
+            if char_out in t_count:
+                if t_count[char_out]==count_window[char_out]:
+                    match-=1
+                count_window[char_out]-=1
+                
+            left+=1
+            
+    if min_len==float('inf'):
+        return""
+    else:
+        return s[start_idx : start_idx + min_len]
+
+s=input()
+t=input()
+print(Minimum_Window_Substring(s,t))
