@@ -22,7 +22,7 @@
 
 
 
-#Longest Substring Without Repeating Characters
+#Q-2. Longest Substring Without Repeating Characters
 # Sliding window approach.TC->O(n²) Sc->O(n)
 # def length_of_longest_substring(string):
 #     start=0
@@ -65,7 +65,7 @@
 
 
 
-#Longest Repeating Character Replacement
+#Q-3. Longest Repeating Character Replacement
 #TC-> O(n)  SC-> O(1)
 # def characterReplacement(word,k):
 #     count = {}
@@ -88,3 +88,34 @@
 # word= input()
 # k=int(input())
 # print(characterReplacement(word,k))
+
+
+
+#Q-4. Permutation In String
+# TC-> O(n) SC-> O(1)
+def check_permutation(s1,s2):
+    if len(s1)>len(s2):
+        return False
+    s1_count={}
+    s2_count={}
+    for i in range(len(s1)):
+        s1_count[s1[i]]= 1 + s1_count.get(s1[i],0)
+        s2_count[s2[i]]= 1 + s2_count.get(s2[i],0)
+    if s1_count==s2_count:
+        return True
+    l=0 
+    for r in range(len(s1), len(s2)):
+        s2_count[s2[r]]=1 + s2_count.get(s2[r],0)
+        s2_count[s2[l]] -= 1
+        
+        if  s2_count[s2[l]]==0:
+            s2_count.pop(s2[l])
+        l+=1
+
+        if s1_count==s2_count:
+            return True
+    return False
+
+string1=input()
+string2=input()
+print(check_permutation(string1,string2))
