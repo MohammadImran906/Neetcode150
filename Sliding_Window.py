@@ -67,7 +67,7 @@
 
 #Longest Repeating Character Replacement
 #TC-> O(n)  SC-> O(1)
-# def characterReplacement(word,):
+# def characterReplacement(word,k):
 #     count = {}
 #     res = 0
 #     l = 0
