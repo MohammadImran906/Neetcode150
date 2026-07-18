@@ -123,6 +123,7 @@
 
 
 #Q-5. Minimum Window Substring
+#TC-> O(n)  SC-> O(1)
 # def Minimum_Window_Substring(s,t):
 #     if len(s)<len(t):
 #         return""
