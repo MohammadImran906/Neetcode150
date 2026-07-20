@@ -5,6 +5,7 @@
 #     for i in string:
 #         if i=='(' or i=='{' or i=='[' or i=='<':
 #             stack.append(i)
+
 #         else:
 #             if len(stack)==0:
 #                 return False
@@ -18,9 +19,11 @@
 #                 stack.pop()
 #             else:
 #                 return False
+
 #     if len(stack)==0:
 #         return True
 #     else:
 #         return False
+
 # string=input()
 # print(Valid_parantheses(string))
