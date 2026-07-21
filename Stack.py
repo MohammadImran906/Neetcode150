@@ -1,5 +1,5 @@
 #Q-1 Valid Parantheses
-#TC->O(n)  SC-> O(n)
+#Stack optimal approach. TC->O(n)  SC-> O(n)
 # def Valid_parantheses(string):
 #     stack=[]
 #     for i in string:
