@@ -57,3 +57,24 @@
 # print(f" Min is {obj.getMin()} ")
 # obj.pop()
 # print(f" Top of stack is {obj.top()} ")
+
+
+#Q-3. Evaluate Reverse Polish Notation
+#TC-> O(n) SC-> O(n)
+def evalRPN(tokens):
+    stack=[]
+    for i in tokens:
+        if i=='+':
+            stack.append(stack.pop() + stack.pop())
+        elif i=='-':
+            stack.append(stack.pop() - stack.pop())
+        elif i=='*':
+            stack.append(stack.pop() * stack.pop())
+        elif i=='/':
+            stack.append(int(stack.pop() / stack.pop()))
+        else:
+            stack.append(int(i))
+    return stack[0]
+
+tokens=input().split()
+print(evalRPN(tokens))
