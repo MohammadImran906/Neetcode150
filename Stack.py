@@ -83,17 +83,17 @@
 
 #Q-4. Daily Tempature 
 #TC->O(n) SC->O(n)
-def daily_temp(temp):
-    n=len(temp)
-    res=[0]*n
-    stack=[]
-    for i in range(n):
-        current_temp=temp[i]
-        while stack and current_temp>temp[stack[-1]]:
-            prev_index=stack.pop()
-            res[prev_index]=i-prev_index
-        stack.append(i)
-    return res
+# def daily_temp(temp):
+#     n=len(temp)
+#     res=[0]*n
+#     stack=[]
+#     for i in range(n):
+#         current_temp=temp[i]
+#         while stack and current_temp>temp[stack[-1]]:
+#             prev_index=stack.pop()
+#             res[prev_index]=i-prev_index
+#         stack.append(i)
+#     return res
 
-temp=[int(x) for x in input().split()]
-print(daily_temp(temp))
+# temp=[int(x) for x in input().split()]
+# print(daily_temp(temp))
