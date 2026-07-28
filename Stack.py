@@ -101,18 +101,18 @@
 
 
 #Q-5. Car fleet
-def car_fleet(target,pos,spd):
-    cars=sorted(zip(pos,spd), reverse=True)
-    stack=[]
-    for pos,spd in cars:
-        time=(target-pos)/spd
-        stack.append(time)
+# def car_fleet(target,pos,spd):
+#     cars=sorted(zip(pos,spd), reverse=True)
+#     stack=[]
+#     for pos,spd in cars:
+#         time=(target-pos)/spd
+#         stack.append(time)
 
-        if len(stack)>=2 and stack[-1]<=stack[-2]:
-            stack.pop()
-    return len(stack)
+#         if len(stack)>=2 and stack[-1]<=stack[-2]:
+#             stack.pop()
+#     return len(stack)
 
-target=int(input())
-position=[int(x) for x in input().split()]
-speed=[int(y) for y in input().split()]
-print(car_fleet(target,position,speed))
+# target=int(input())
+# position=[int(x) for x in input().split()]
+# speed=[int(y) for y in input().split()]
+# print(car_fleet(target,position,speed))
