@@ -100,8 +100,7 @@
 
 
 
-#Q-5. Car fleet
-#TC-> O(n) SC-> O(n)
+#Q-5. Car fleet. TC-> O(n) SC-> O(n)
 # def car_fleet(target,pos,spd):
 #     cars=sorted(zip(pos,spd), reverse=True)
 #     stack=[]
