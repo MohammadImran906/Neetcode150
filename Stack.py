@@ -130,6 +130,7 @@
 #             max_area=max(max_area, height* (i-index))
 #             start=index
 #         stack.append((start,h))
+
 #     for i,h in stack:
 #         max_area=max(max_area,h*(len(heights)-i))
 #     return max_area

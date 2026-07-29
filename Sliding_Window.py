@@ -171,4 +171,22 @@
 # print(Minimum_Window_Substring(s,t))
 
 
-#Q-6 
+#Q-6 Sliding Window Maximum
+from collections import deque
+def sliding_window_max(arr,k):
+    res=[]
+    q=deque()
+    for i in range(len(arr)):
+        while q and arr[q[-1]]<=arr[i]:
+            q.pop()
+        q.append(i)
+
+        if q and q[0]<=i-k:
+            q.popleft()
+        if i>= k-1:
+            res.append(arr[q[0]])
+    return res
+
+arr=[int(x) for x in input().split()]
+k=int(input())
+print(sliding_window_max(arr,k))
