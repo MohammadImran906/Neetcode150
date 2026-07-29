@@ -172,7 +172,7 @@
 
 
 #Q-6 Sliding Window Maximum
-#TC-> O(n)  SC-> O(n)
+#Optimal Approach using Deque. TC-> O(n)  SC-> O(n)
 # from collections import deque
 # def sliding_window_max(arr,k):
 #     res=[]
