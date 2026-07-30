@@ -16,3 +16,30 @@
 # arr=[int(x) for x in input().split()]
 # k=int(input())
 # print(binary_search(arr,k))
+
+
+
+#Q-2. Search a 2-D matrix
+#Better approach(Row-by-Row Binary search). TC-> O(M log N) SC->O(1)
+def Search_2D(matrix,target):
+    for i in matrix:
+        l=0
+        r=len(matrix[0])-1
+        if i[0] <= target <=i[-1]:
+            while l<=r:
+                mid=(l+r)//2
+                if i[mid]==target:
+                    return True
+                elif i[mid]<target:
+                    l=mid+1
+                else:
+                    r=mid-1
+    return False
+
+n=int(input())
+matrix=[]
+for i in range(n):
+    rows=[int(x) for x in input().split()]
+    matrix.append(rows)
+target=int(input())
+print(Search_2D(matrix,target))
