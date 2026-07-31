@@ -70,37 +70,38 @@
 
 
 #Q-3. Time Based Key Value Store
-class TimeMap:
-    def __init__(self):
-        self.store={}
-    def set(self, key, value, timestamp):
-        if key not in self.store:
-            self.store[key]=[]
-        self.store[key].append((value,timestamp))
-    def get(self,key,timestamp):
-        if key not in self.store:
-            return "Not available in store"
-        arr=self.store[key]
-        ans=""
-        low,high=0,len(arr)-1
-        while low<=high:
-            mid=(low+high)//2
-            if arr[mid][1]<=timestamp:
-                ans=arr[mid][0]
-                low=mid+1
-            else:
-                high=mid-1
-        return ans
+#TC-> O(logn)  SC->O(M*N)
+# class TimeMap:
+#     def __init__(self):
+#         self.store={}
+#     def set(self, key, value, timestamp):
+#         if key not in self.store:
+#             self.store[key]=[]
+#         self.store[key].append((value,timestamp))
+#     def get(self,key,timestamp):
+#         if key not in self.store:
+#             return "Not available in store"
+#         arr=self.store[key]
+#         ans=""
+#         low,high=0,len(arr)-1
+#         while low<=high:
+#             mid=(low+high)//2
+#             if arr[mid][1]<=timestamp:
+#                 ans=arr[mid][0]
+#                 low=mid+1
+#             else:
+#                 high=mid-1
+#         return ans
 
-obj=TimeMap()
-obj.set("Icecream", "Chocholate",1)
-obj.set("Icecream", "vanilla",3)
-obj.set("Icecream", "Mango",6)
-print(obj.get("Icecream",3))
-print(obj.get("Icecream",5))
-print(obj.get("Icecream",7))
-print(obj.get("Cold-drink",5))
-obj.set("Cold-drink","Sprite",3)
-obj.set("Cold-drink","Mountain-dew",6)
-print(obj.get("Cold-drink",3))
-print(obj.get("Cold-drink",5))
+# obj=TimeMap()
+# obj.set("Icecream", "Chocholate",1)
+# obj.set("Icecream", "vanilla",3)
+# obj.set("Icecream", "Mango",6)
+# print(obj.get("Icecream",3))
+# print(obj.get("Icecream",5))
+# print(obj.get("Icecream",7))
+# print(obj.get("Cold-drink",5))
+# obj.set("Cold-drink","Sprite",3)
+# obj.set("Cold-drink","Mountain-dew",6)
+# print(obj.get("Cold-drink",3))
+# print(obj.get("Cold-drink",5))
