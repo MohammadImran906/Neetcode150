@@ -39,30 +39,68 @@
 
 # Optimal Approach(Binary search) 
 #Tc->O(log(m*n))  SC-> O(1)
-def Search_2D_2(matrix,target):
-    rows=len(matrix)
-    cols=len(matrix[0])
+# def Search_2D_2(matrix,target):
+#     rows=len(matrix)
+#     cols=len(matrix[0])
 
-    l=0
-    r=(rows*cols)-1
-    while l<=r:
-        mid=(l+r)//2
+#     l=0
+#     r=(rows*cols)-1
+#     while l<=r:
+#         mid=(l+r)//2
 
-        row=mid//cols
-        col=mid%cols
+#         row=mid//cols
+#         col=mid%cols
 
-        if matrix[row][col]==target:
-            return True
-        elif matrix[row][col]<target:
-            l=mid+1
-        else:
-            r=mid-1
-    return False
+#         if matrix[row][col]==target:
+#             return True
+#         elif matrix[row][col]<target:
+#             l=mid+1
+#         else:
+#             r=mid-1
+#     return False
 
-n=int(input())
-matrix=[]
-for i in range(n):
-    rows=[int(x) for x in input().split()]
-    matrix.append(rows)
-target=int(input())
-print(Search_2D_2(matrix,target))
+# n=int(input())
+# matrix=[]
+# for i in range(n):
+#     rows=[int(x) for x in input().split()]
+#     matrix.append(rows)
+# target=int(input())
+# print(Search_2D_2(matrix,target))
+
+
+
+#Q-3. Time Based Key Value Store
+class TimeMap:
+    def __init__(self):
+        self.store={}
+    def set(self, key, value, timestamp):
+        if key not in self.store:
+            self.store[key]=[]
+        self.store[key].append((value,timestamp))
+    def get(self,key,timestamp):
+        if key not in self.store:
+            return "Not available in store"
+        arr=self.store[key]
+        ans=""
+        low,high=0,len(arr)-1
+        while low<=high:
+            mid=(low+high)//2
+            if arr[mid][1]<=timestamp:
+                ans=arr[mid][0]
+                low=mid+1
+            else:
+                high=mid-1
+        return ans
+
+obj=TimeMap()
+obj.set("Icecream", "Chocholate",1)
+obj.set("Icecream", "vanilla",3)
+obj.set("Icecream", "Mango",6)
+print(obj.get("Icecream",3))
+print(obj.get("Icecream",5))
+print(obj.get("Icecream",7))
+print(obj.get("Cold-drink",5))
+obj.set("Cold-drink","Sprite",3)
+obj.set("Cold-drink","Mountain-dew",6)
+print(obj.get("Cold-drink",3))
+print(obj.get("Cold-drink",5))
