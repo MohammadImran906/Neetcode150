@@ -107,21 +107,40 @@
 # print(obj.get("Cold-drink",5))
 
 
-#Q-4 Koko Eating Banana
-def min_eating_speed(piles,h):
-    l=0
-    r=max(piles)
-    ans=r
-    while l<=r:
-        k=(l+r)//2
-        total_hours=sum((p+k-1)//k for p in piles)
-        if total_hours<=h:
-            ans=k
-            r=k-1
-        else:
-            l=k+1
-    return ans
+#Q-4. Koko Eating Banana
+#TC-> O(Nlog(max(p)))  SC->O(1)
+# def min_eating_speed(piles,h):
+#     l=0
+#     r=max(piles)
+#     ans=r
+#     while l<=r:
+#         k=(l+r)//2
+#         total_hours=sum((p+k-1)//k for p in piles)
+#         if total_hours<=h:
+#             ans=k
+#             r=k-1
+#         else:
+#             l=k+1
+#     return ans
 
-piles=[int(x) for x in input().split()]
-hours=int(input())
-print(min_eating_speed(piles,hours))
+# piles=[int(x) for x in input().split()]
+# hours=int(input())
+# print(min_eating_speed(piles,hours))
+
+
+
+#Q-5. Find Minimum In Rotated Sorted Array
+#TC-> O(logn)  SC->O(1)
+def min_in_rotated_sorted_arr(arr):
+    l=0
+    r=len(arr)-1
+    while l<=r:
+        mid=(l+r)//2
+        if arr[mid]>arr[r]:
+            l=mid+1
+        else:
+            r=mid-1
+    return arr[l]
+
+arr=[int(x) for x in input().split()]
+print(min_in_rotated_sorted_arr(arr))
