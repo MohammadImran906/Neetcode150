@@ -131,16 +131,41 @@
 
 #Q-5. Find Minimum In Rotated Sorted Array
 #TC-> O(logn)  SC->O(1)
-def min_in_rotated_sorted_arr(arr):
+# def min_in_rotated_sorted_arr(arr):
+#     l=0
+#     r=len(arr)-1
+#     while l<=r:
+#         mid=(l+r)//2
+#         if arr[mid]>arr[r]:
+#             l=mid+1
+#         else:
+#             r=mid-1
+#     return arr[l]
+
+# arr=[int(x) for x in input().split()]
+# print(min_in_rotated_sorted_arr(arr))
+
+
+#Q-6. Search In Rotated Sorted Array
+def search_in_rotated_sorted_arr(arr,target):
     l=0
     r=len(arr)-1
     while l<=r:
         mid=(l+r)//2
-        if arr[mid]>arr[r]:
-            l=mid+1
+        if arr[mid]==target:
+            return mid
+        if arr[mid]>=arr[l]:
+            if arr[l]<=target<=arr[mid]:
+                r=mid-1
+            else:
+                l=mid+1
         else:
-            r=mid-1
-    return arr[l]
+            if arr[r]>=target>=arr[mid]:
+                l=mid+1
+            else:
+                r=mid-1
+    return -1
 
 arr=[int(x) for x in input().split()]
-print(min_in_rotated_sorted_arr(arr))
+target=int(input())
+print(search_in_rotated_sorted_arr(arr,target))
