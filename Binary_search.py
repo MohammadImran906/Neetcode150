@@ -105,3 +105,23 @@
 # obj.set("Cold-drink","Mountain-dew",6)
 # print(obj.get("Cold-drink",3))
 # print(obj.get("Cold-drink",5))
+
+
+#Q-4 Koko Eating Banana
+def min_eating_speed(piles,h):
+    l=0
+    r=max(piles)
+    ans=r
+    while l<=r:
+        k=(l+r)//2
+        total_hours=sum((p+k-1)//k for p in piles)
+        if total_hours<=h:
+            ans=k
+            r=k-1
+        else:
+            l=k+1
+    return ans
+
+piles=[int(x) for x in input().split()]
+hours=int(input())
+print(min_eating_speed(piles,hours))
