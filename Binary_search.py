@@ -147,25 +147,25 @@
 
 
 #Q-6. Search In Rotated Sorted Array
-def search_in_rotated_sorted_arr(arr,target):
-    l=0
-    r=len(arr)-1
-    while l<=r:
-        mid=(l+r)//2
-        if arr[mid]==target:
-            return mid
-        if arr[mid]>=arr[l]:
-            if arr[l]<=target<=arr[mid]:
-                r=mid-1
-            else:
-                l=mid+1
-        else:
-            if arr[r]>=target>=arr[mid]:
-                l=mid+1
-            else:
-                r=mid-1
-    return -1
+# def search_in_rotated_sorted_arr(arr,target):
+#     l=0
+#     r=len(arr)-1
+#     while l<=r:
+#         mid=(l+r)//2
+#         if arr[mid]==target:
+#             return mid
+#         if arr[mid]>=arr[l]:
+#             if arr[l]<=target<=arr[mid]:
+#                 r=mid-1
+#             else:
+#                 l=mid+1
+#         else:
+#             if arr[r]>=target>=arr[mid]:
+#                 l=mid+1
+#             else:
+#                 r=mid-1
+#     return -1
 
-arr=[int(x) for x in input().split()]
-target=int(input())
-print(search_in_rotated_sorted_arr(arr,target))
+# arr=[int(x) for x in input().split()]
+# target=int(input())
+# print(search_in_rotated_sorted_arr(arr,target))
