@@ -75,7 +75,6 @@
 # def mergelist(list1,list2):
 #     dummy=ListNode(0)
 #     tail=dummy
-
 #     while list1 and list2:
 #         if list1.val<=list2.val:
 #             tail.next=list1
@@ -109,6 +108,5 @@
 # l2=creating_list(L2_input)
 
 # merge=mergelist(l1,l2)
-
 # printingList(merge)
 
