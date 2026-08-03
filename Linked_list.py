@@ -66,48 +66,49 @@
 
 
 #Q-2. Merge Two Sorted Lists
-class ListNode:
-    def __init__(self,val):
-        self.val=val
-        self.next=None
+#TC-> O(n+m)  SC-> O(1)
+# class ListNode:
+#     def __init__(self,val):
+#         self.val=val
+#         self.next=None
 
-def mergelist(list1,list2):
-    dummy=ListNode(0)
-    tail=dummy
+# def mergelist(list1,list2):
+#     dummy=ListNode(0)
+#     tail=dummy
 
-    while list1 and list2:
-        if list1.val<=list2.val:
-            tail.next=list1
-            list1=list1.next
-        else:
-            tail.next=list2
-            list2=list2.next
-        tail=tail.next
-    tail.next=list1 if list1 else list2
-    return dummy.next
+#     while list1 and list2:
+#         if list1.val<=list2.val:
+#             tail.next=list1
+#             list1=list1.next
+#         else:
+#             tail.next=list2
+#             list2=list2.next
+#         tail=tail.next
+#     tail.next=list1 if list1 else list2
+#     return dummy.next
 
-def creating_list(arr):
-    head=ListNode(int(arr[0]))
-    curr=head
-    for val in arr[1:]:
-        curr.next=ListNode(int(val))
-        curr=curr.next
-    return head
+# def creating_list(arr):
+#     head=ListNode(int(arr[0]))
+#     curr=head
+#     for val in arr[1:]:
+#         curr.next=ListNode(int(val))
+#         curr=curr.next
+#     return head
 
-def printingList(head):
-    curr=head
-    while curr:
-        print(curr.val,end="->")
-        curr=curr.next
-    print("None")
+# def printingList(head):
+#     curr=head
+#     while curr:
+#         print(curr.val,end="->")
+#         curr=curr.next
+#     print("None")
 
-L1_input=[1,3,8]
-L2_input=[4,7,10,11]
+# L1_input=[1,3,8]
+# L2_input=[4,7,10,11]
 
-l1=creating_list(L1_input)
-l2=creating_list(L2_input)
+# l1=creating_list(L1_input)
+# l2=creating_list(L2_input)
 
-merge=mergelist(l1,l2)
+# merge=mergelist(l1,l2)
 
-printingList(merge)
+# printingList(merge)
 
