@@ -114,36 +114,36 @@
 
 #Q-3. Linked List Cycle
 #TC->O(n)  SC-> O(1)
-class ListNode:
-    def __init__(self,val):
-        self.val=val
-        self.next=None
+# class ListNode:
+#     def __init__(self,val):
+#         self.val=val
+#         self.next=None
 
-def hascycle(head):
-    slow, fast=head, head
-    while fast and fast.next:
-        slow=slow.next
-        fast=fast.next.next
+# def hascycle(head):
+#     slow, fast=head, head
+#     while fast and fast.next:
+#         slow=slow.next
+#         fast=fast.next.next
 
-        if slow==fast:
-            return True
-    return False
+#         if slow==fast:
+#             return True
+#     return False
 
-def creating_list(arr,pos):
-    if not arr:
-        return None
-    head=ListNode(arr[0])
-    curr=head
-    for val in arr[1:]:
-        curr.next=ListNode(val)
-        curr=curr.next
+# def creating_list(arr,pos):
+#     if not arr:
+#         return None
+#     head=ListNode(arr[0])
+#     curr=head
+#     for val in arr[1:]:
+#         curr.next=ListNode(val)
+#         curr=curr.next
 
-    if pos!=-1:
-        target=head
-        for i in range(pos):
-            target=target.next
-            curr.next=target
-    return head
+#     if pos!=-1:
+#         target=head
+#         for i in range(pos):
+#             target=target.next
+#             curr.next=target
+#     return head
 
-head=creating_list([1,2,3,4], pos=-1)
-print(hascycle(head))
+# head=creating_list([1,2,3,4], pos=-1)
+# print(hascycle(head))
