@@ -220,20 +220,20 @@
 
 
 #Q-5. Find the duplicate number
-def isduplicate(nums):
-    slow=nums[0]
-    fast=nums[0]
-    while True:
-        slow=nums[slow]
-        fast=nums[nums[fast]]
-        if slow == fast:
-            break
+# def isduplicate(nums):
+#     slow=nums[0]
+#     fast=nums[0]
+#     while True:
+#         slow=nums[slow]
+#         fast=nums[nums[fast]]
+#         if slow == fast:
+#             break
 
-    slow=nums[0]
-    while slow!=fast:
-        slow=nums[slow]
-        fast=nums[fast]
-    return slow
+#     slow=nums[0]
+#     while slow!=fast:
+#         slow=nums[slow]
+#         fast=nums[fast]
+#     return slow
 
-nums=[int(x) for x in input().split()]
-print(isduplicate(nums))
+# nums=[int(x) for x in input().split()]
+# print(isduplicate(nums))
