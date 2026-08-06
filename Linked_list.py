@@ -151,68 +151,68 @@
 
 #Q-4. Copy List With Random Pointer
 #TC->O(n)  SC->O(1)
-class Node:
-    def __init__(self, val):
-        self.val=val
-        self.next=None
-        self.random=None
+# class Node:
+#     def __init__(self, val):
+#         self.val=val
+#         self.next=None
+#         self.random=None
 
-def copyRandomList(head):
-    if not head:
-        return None
+# def copyRandomList(head):
+#     if not head:
+#         return None
 
-    curr=head
-    while curr:
-        newNode=Node(curr.val)
-        newNode.next=curr.next
-        curr.next=newNode
-        curr=newNode.next
+#     curr=head
+#     while curr:
+#         newNode=Node(curr.val)
+#         newNode.next=curr.next
+#         curr.next=newNode
+#         curr=newNode.next
 
-    curr=head
-    while curr:
-        if curr.random:
-            curr.next.random=curr.random.next
-        curr=curr.next.next
+#     curr=head
+#     while curr:
+#         if curr.random:
+#             curr.next.random=curr.random.next
+#         curr=curr.next.next
 
-    curr=head
-    copy_head=curr.next
-    copy_curr=copy_head
-    while curr:
-        curr.next=curr.next.next
-        curr=curr.next
-        if copy_curr.next:
-            copy_curr.next=copy_curr.next.next
-            copy_curr=copy_curr.next
+#     curr=head
+#     copy_head=curr.next
+#     copy_curr=copy_head
+#     while curr:
+#         curr.next=curr.next.next
+#         curr=curr.next
+#         if copy_curr.next:
+#             copy_curr.next=copy_curr.next.next
+#             copy_curr=copy_curr.next
 
-    return copy_head
+#     return copy_head
 
-def creatingList(data):
-    if not data:
-        return None
+# def creatingList(data):
+#     if not data:
+#         return None
 
-    nodes=[Node(val) for val, _ in data]
-    for i in range(len(data)):
-        if i < len(data)-1:
-            nodes[i].next=nodes[i+1]
+#     nodes=[Node(val) for val, _ in data]
+#     for i in range(len(data)):
+#         if i < len(data)-1:
+#             nodes[i].next=nodes[i+1]
 
-        random_idx=data[i][1]
-        if random_idx is not None:
-            nodes[i].random=nodes[random_idx]
-    return nodes[0]
+#         random_idx=data[i][1]
+#         if random_idx is not None:
+#             nodes[i].random=nodes[random_idx]
+#     return nodes[0]
 
-def Print_list(head):
-    curr=head
-    while curr:
-        random_val=curr.random.val if curr.random else None
-        print(f"[Val: {curr.val} R: {random_val}]", end="->")
-        curr=curr.next
+# def Print_list(head):
+#     curr=head
+#     while curr:
+#         random_val=curr.random.val if curr.random else None
+#         print(f"[Val: {curr.val} R: {random_val}]", end="->")
+#         curr=curr.next
 
-    print("None")
+#     print("None")
 
-data=[[7,None],[13,0],[11,4],[10,2],[1,0]]
+# data=[[7,None],[13,0],[11,4],[10,2],[1,0]]
 
-Original=creatingList(data)
-Print_list(Original)
+# Original=creatingList(data)
+# Print_list(Original)
 
-Clone_list=copyRandomList(Original)
-Print_list(Clone_list)
+# Clone_list=copyRandomList(Original)
+# Print_list(Clone_list)
