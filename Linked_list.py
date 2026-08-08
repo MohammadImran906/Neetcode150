@@ -220,6 +220,8 @@
 
 
 #Q-5. Find the duplicate number
+#TC-> o(n)  SC-> O(1)
+#We have to give atleast N+1 inputs, N being the max of array
 # def isduplicate(nums):
 #     slow=nums[0]
 #     fast=nums[0]
@@ -237,3 +239,35 @@
 
 # nums=[int(x) for x in input().split()]
 # print(isduplicate(nums))
+
+
+#Q-5. LRU Cache
+#TC->O(1)  SC-> O(n)
+from collections import OrderedDict
+class LRUCache:
+    def __init__(self,capacity):
+        self.cache=OrderedDict()
+        self.capacity=capacity
+
+    def get(self, key):
+        if key not in self.cache:
+            return -1
+        self.cache.move_to_end(key)
+        return self.cache[key]
+
+    def put(self,key,value):
+        if key in self.cache:
+            self.cache.move_to_end(key)
+
+        self.cache[key]=value
+
+        if len(self.cache)>self.capacity:
+            self.cache.popitem(last=False)
+
+obj=LRUCache(2)
+obj.put(1,10)
+obj.put(2,20)
+print(obj.get(1))
+obj.put(3,30)
+print(obj.get(2))
+print(obj.get(3))
