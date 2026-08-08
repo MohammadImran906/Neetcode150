@@ -271,3 +271,65 @@
 # obj.put(3,30)
 # print(obj.get(2))
 # print(obj.get(3))
+
+
+#Q-6. Merge K sorted lists
+class ListNode:
+    def __init__(self,val):
+        self.val=val
+        self.next=None
+
+class Solution:
+    def mergeKlists(self,lists):
+        if not lists or len(lists)==0:
+            return None
+        while len(lists)>1:
+            merged_list=[]
+            for i in range(0, len(lists),2):
+                l1=lists[i]
+                l2=lists[i+1] if i+1<len(lists) else None
+
+                merged_list.append(self.merge2list(l1,l2))
+
+            lists=merged_list
+        return lists[0]
+
+    def merge2list(self,list1,list2):
+        dummy=ListNode(0)
+        tail=dummy
+        while list1 and list2:
+            if list1.val<=list2.val:
+                tail.next=list1
+                list1=list1.next
+            else:
+                tail.next=list2
+                list2=list2.next
+            tail=tail.next
+        tail.next=list1 if list1 else list2
+        return dummy.next
+
+def creating_list(arr):
+    head=ListNode(int(arr[0]))
+    curr=head
+    for val in arr[1:]:
+        curr.next=ListNode(int(val))
+        curr=curr.next
+    return head
+
+def printingList(head):
+    curr=head
+    while curr:
+        print(curr.val,end="->")
+        curr=curr.next
+    print("None")
+
+
+l1=creating_list([1,2,4,6])
+l2=creating_list([3,4,7,9])
+l3=creating_list([6,7,8,9])
+l4=creating_list([2,3,7,8])
+
+obj=Solution()
+
+res=obj.mergeKlists([l1,l2,l3,l4])
+printingList(res)
