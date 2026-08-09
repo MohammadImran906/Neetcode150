@@ -274,6 +274,7 @@
 
 
 #Q-6. Merge K sorted lists
+#TC-> O(nlogk)  SC->O(k)
 # class ListNode:
 #     def __init__(self,val):
 #         self.val=val
@@ -333,3 +334,177 @@
 
 # res=obj.mergeKlists([l1,l2,l3,l4])
 # printingList(res)
+
+
+
+#Q-7. Reordered List
+# class Node:
+#     def __init__(self,val):
+#         self.val=val
+#         self.next=None
+
+# class Solution:
+#     def reorderedList(self,head):
+#         if not head or not head.next:
+#             return None
+        
+#         slow=head
+#         fast=head
+#         while fast and fast.next:
+#             slow=slow.next
+#             fast=fast.next.next
+
+#         prev=None
+#         curr=slow.next
+#         slow.next=None
+
+#         while curr:
+#             nxt=curr.next
+#             curr.next=prev
+#             prev=curr
+#             curr=nxt
+
+#         first=head
+#         second=prev
+#         while second:
+#             temp1=first.next
+#             temp2=second.next
+
+#             first.next=second
+#             second.next=temp1
+
+#             first=temp1
+#             second=temp2
+
+
+# def creatingList(arr):
+#     dummy=Node(0)
+#     curr=dummy
+#     for val in arr:
+#         curr.next=Node(val)
+#         curr=curr.next
+#     return dummy.next
+
+# def printList(head):
+#     curr=head
+#     while curr:
+#         print(curr.val,end="->")
+#         curr=curr.next
+#     print("None")
+
+# arr=creatingList([1,2,3,4,5])
+
+# obj=Solution()
+# obj.reorderedList(arr)
+# printList(arr)
+
+
+
+#Q-8. Remove Nth Node From End of List
+#TC-> O(n)  SC-> O(1)
+# class ListNode:
+#     def __init__(self,val=0,next=None):
+#         self.val=val
+#         self.next=next
+
+# class Solution:
+#     def removeNthFromEnd(self,head,n):
+#         dummy=ListNode(0,head)
+#         slow=dummy
+#         fast=dummy
+#         for _ in range(n+1):
+#             fast=fast.next
+
+#         while fast:
+#             slow=slow.next
+#             fast=fast.next
+
+#         slow.next=slow.next.next
+
+#         return dummy.next
+
+# def creatList(arr):
+#     if not arr:
+#         return None
+#     head=ListNode(arr[0])
+#     curr=head
+#     for val in arr[1:]:
+#         curr.next=ListNode(val)
+#         curr=curr.next
+#     return head
+
+# def display_list(head):
+#     curr=head
+#     while curr:
+#         print(curr.val, end="->")
+#         curr=curr.next
+#     print("None")
+
+
+# arr=[1,4,2,3,7,8,9]
+# n=int(input())
+# l1=creatList(arr)
+# display_list(l1)
+# obj=Solution()
+# modified_list=obj.removeNthFromEnd(l1,n)
+# display_list(modified_list)
+
+
+#Q-9. Add Two numbers TC-> O(max(n,m))  SC-> O(max(n,m))
+# class ListNode:
+#     def __init__(self,val=0,next=None):
+#         self.val=val
+#         self.next=next
+
+# class Solution:
+#     def AddTwoNumbers(self,l1,l2):
+#         dummy=ListNode(0)
+#         curr=dummy
+#         carry=0
+#         while l1 or l2 or carry:
+#             val1=l1.val if l1 else None
+#             val2=l2.val if l2 else None
+
+#             total=val1+val2+carry
+#             carry=total//10
+#             new_digit=total%10
+
+#             curr.next=ListNode(new_digit)
+#             curr=curr.next
+
+#             l1=l1.next if l1 else None
+#             l2=l2.next if l2 else None
+#         return dummy.next
+
+# def creatList(arr):
+#     if not arr:
+#         return None
+#     head = ListNode(arr[0])
+#     curr = head
+#     for val in arr[1:]:
+#         curr.next = ListNode(val)
+#         curr = curr.next
+#     return head
+
+# def display_list(head):
+#     curr = head
+#     while curr:
+#         print(curr.val, end="->")
+#         curr = curr.next
+#     print("None")
+
+# arr1 = [2, 4, 3]
+# arr2 = [5, 6, 4]
+
+# l1=creatList(arr1)
+# l2=creatList(arr2)
+
+# print("List 1:")
+# display_list(l1)
+# print("List 2:")
+# display_list(l2)
+
+# obj=Solution()
+# result=obj.AddTwoNumbers(l1,l2)
+# print("List after adding:")
+# display_list(result)
