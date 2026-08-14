@@ -400,7 +400,8 @@
 
 
 
-#Q-8. Remove Nth Node From End of List. TC-> O(n)  SC-> O(1)
+#Q-8. Remove Nth Node From End of List.
+# TC-> O(n)  SC-> O(1)
 # class ListNode:
 #     def __init__(self,val=0,next=None):
 #         self.val=val
