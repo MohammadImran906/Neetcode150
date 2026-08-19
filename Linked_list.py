@@ -450,7 +450,8 @@
 # display_list(modified_list)
 
 
-#Q-9. Add Two numbers TC-> O(max(n,m))  SC-> O(max(n,m))
+#Q-9. Add Two numbers
+# TC-> O(max(n,m))  SC-> O(max(n,m))
 # class ListNode:
 #     def __init__(self,val=0,next=None):
 #         self.val=val
