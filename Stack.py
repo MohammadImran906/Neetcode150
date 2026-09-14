@@ -118,8 +118,7 @@
 # print(car_fleet(target,position,speed))
 
 
-#Q-6. Largest rectangle in histogram
-#TC->O(n) SC->O(n)
+#Q-6. Largest rectangle in histogram TC->O(n) SC->O(n)
 # def lar_rect_in_hist(heights):
 #     max_area=0
 #     stack=[]
